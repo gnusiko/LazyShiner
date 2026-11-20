@@ -6,5 +6,6 @@
 *.map
 *.sym
 *.lss
+*.html
 
 .vscode/
