@@ -1,6 +1,7 @@
 #include <avr/io.h>
+#include <util/delay.h>
 #include "ds18b20.h"
-
+#include "config.h"
 
 void timer_init(void){
     DDRB = (1 << PB1);
@@ -11,3 +12,19 @@ void timer_init(void){
     OCR1A = 1952;
 }
 
+int main(){
+    timer_init();
+    DDRD = 255;
+    uint16_t T = 0;
+    while(1){
+    
+    ds18b20_start_conversion();
+    _delay_us(750);
+    {
+        /* code */
+    }
+    
+    T = ds18b20_read_temp();
+    PORTD = T;
+    }
+}

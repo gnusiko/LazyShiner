@@ -12,6 +12,10 @@
 #define HEATER_DDR      DDRB
 #define HEATER_BIT      PB1
 
+#define LCD_DDR         DDRD
+#define LCD_PORT        PORTD
+#define RS              PD0
+#define E               PD1
 
 
 #endif  // CONFIG_H
