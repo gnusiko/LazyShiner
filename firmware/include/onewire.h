@@ -3,11 +3,9 @@
 
 #include <avr/io.h>
 #include <stdint.h>
+#include "config.h"
 
-#define OW_PORT     PORTB
-#define OW_DDR      DDRB
-#define OW_PIN      PINB
-#define OW_BIT      PB0
+
 
 uint8_t ow_reset(void);
 
