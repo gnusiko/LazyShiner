@@ -3,6 +3,7 @@
 #include "ds18b20.h"
 #include "config.h"
 #include "lcd1602.h"
+#include " control.h"
 
 void timer_init(void){
     DDRB = (1 << PB1);
@@ -16,21 +17,9 @@ void timer_init(void){
 int main(){
     timer_init();
     lcd_init();
-    lcd_set_cursor(0, 0);
-    lcd_print("Hello, Attmega8");
-    lcd_set_cursor(1, 0);
-    lcd_print("Line 2 works");
-    DDRD = 255;
-    uint16_t T = 0;
+    control_init();
+
     while(1){
     
-    ds18b20_start_conversion();
-    _delay_us(750);
-    {
-        /* code */
-    }
-    
-    T = ds18b20_read_temp();
-    PORTD = T;
     }
 }

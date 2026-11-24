@@ -17,5 +17,11 @@
 #define RS              PD0
 #define E               PD1
 
+#define BTN_DDR         DDRC
+#define BTN_PORT        PORTC
+#define BTN_PIN         PINC
+#define BTN_START       PC0
+#define BTN_DOWN        PC1
+#define BTN_UP          PC2
 
 #endif  // CONFIG_H
