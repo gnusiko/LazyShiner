@@ -1,4 +1,4 @@
-#include " control.h"
+#include "control.h"
 #include "ds18b20.h"
 #include <avr/io.h>
 
@@ -9,7 +9,7 @@
 static SystemStatus sys;
 
 static void apply_heater_power(uint8_t persent){
-    if(persent > 100)   persent == 100;
+    if(persent > 100)   persent = 100;
     sys.power_pct = persent;
     OCR1A = ((uint32_t)PWM_TOP_VALUE * persent) / 100;
 }
@@ -34,11 +34,11 @@ void control_set_target_temp(int16_t temp_deci){
 }
 
 void control_set_profile(ProfileType profile){
-    if(sys.state = STATE_IDLE)  sys.profile = profile;
+    if(sys.state == STATE_IDLE)  sys.profile = profile;
 }
 
 void control_start_stop(void){
-    if(sys.state = STATE_ALARM){
+    if(sys.state == STATE_ALARM){
         sys.error = ERR_NONE;
         sys.state = STATE_IDLE;
         apply_heater_power(0);
@@ -54,7 +54,7 @@ void control_start_stop(void){
 
 void control_tick(void){
     if(sys.state == STATE_HEATUP || sys.state == STATE_WORK){
-        if(sys.current_temp = DS18B20_ERROR){
+        if(sys.current_temp == DS18B20_ERROR){
             sys.error = ERR_SENSOR_LOST;
             sys.state = STATE_ALARM;
         }

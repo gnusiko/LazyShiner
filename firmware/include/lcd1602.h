@@ -1,14 +1,6 @@
-#include "config.h"
+#include "control.h"
 
 
-#ifndef LCD_DDR
-#define LCD_DDR         DDRD
-#define LCD_PORT        PORTD
-#define RS              PD0
-#define E               PD1
-
-
-#endif
 
 void lcd_send_nibble(uint8_t nibble);
 
@@ -20,3 +12,10 @@ void lcd_set_cursor(uint8_t row, uint8_t col);
 
 void lcd_print(const char *str);
 
+void lcd_clear(void);
+
+void lcd_render_status(const SystemStatus *st);
+
+//static void lcd_print_temp(int16_t demp_deci);
+
+//static void lcd_print_pct(uint8_t pct);

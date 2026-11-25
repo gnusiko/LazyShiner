@@ -4,15 +4,27 @@
 
 <item itemtype="DS18B20" CircId="DS18B20-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-60,240" rotation="0" hflip="1" vflip="1" label="DS18B20-3" idLabPos="-24,-28" labelrot="0" valLabPos="-16,20" valLabRot="0" ROM="28 D6 3F 6C 3A 00 00 B5 " Temp="13 °C" TempInc="1 °C" />
 
-<item itemtype="MCU" CircId="mega8-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-88,-8" rotation="0" hflip="1" vflip="1" label="mega8-4" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="1e+06 Hz" Program="../../distiller/LazyShiner/firmware/firmware.hex" Auto_Load="true" saveEepr="false" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega8-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-88,-8" rotation="0" hflip="1" vflip="1" label="mega8-4" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="1e+06 Hz" Program="../firmware/firmware.hex" Auto_Load="true" saveEepr="false" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
 
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-204,104" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-5" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-204,104" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-5" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
 
 <item itemtype="Resistor" CircId="Resistor-6" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-164,108" rotation="0" hflip="1" vflip="1" label="Resistor-6" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="4.7 kΩ" />
 
 <item itemtype="Ground" CircId="Ground-13" mainComp="false" Show_id="false" Show_Val="false" Pos="-304,-84" rotation="0" hflip="1" vflip="1" label="Ground-13" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
+<item itemtype="Ground" CircId="Ground-15" mainComp="false" Show_id="false" Show_Val="false" Pos="56,112" rotation="0" hflip="1" vflip="1" label="Ground-15" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Push" CircId="Push-16" mainComp="false" Show_id="false" Show_Val="false" Pos="-12,60" rotation="0" hflip="1" vflip="1" label="Push-16" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Push" CircId="Push-17" mainComp="false" Show_id="false" Show_Val="false" Pos="32,36" rotation="0" hflip="1" vflip="1" label="Push-17" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Push" CircId="Push-19" mainComp="false" Show_id="false" Show_Val="false" Pos="-20,24" rotation="0" hflip="1" vflip="1" label="Push-19" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
 <item itemtype="Node" CircId="Node-12" mainComp="false" Pos="-136,108" />
+
+<item itemtype="Node" CircId="Node-18" mainComp="false" Pos="56,60" />
+
+<item itemtype="Node" CircId="Node-20" mainComp="false" Pos="56,36" />
 
 <item itemtype="Connector" uid="Connector-5" startpinid="Fixed Voltage-5-outnod" endpinid="Resistor-6-lPin" pointList="-188,104,-180,104,-180,108" />
 
@@ -35,5 +47,21 @@
 <item itemtype="Connector" uid="Connector-31" startpinid="Hd44780-2-PinEn" endpinid="mega8-4-PORTD1" pointList="-276,-164,-276,16,-96,16" />
 
 <item itemtype="Connector" uid="Connector-32" startpinid="Ground-13-Gnd" endpinid="Hd44780-2-PinRW" pointList="-304,-100,-284,-100,-284,-164" />
+
+<item itemtype="Connector" uid="Connector-33" startpinid="mega8-4-PORTC0" endpinid="Push-16-pinP0" pointList="-48,40,-36,40,-36,60,-28,60" />
+
+<item itemtype="Connector" uid="Connector-35" startpinid="mega8-4-PORTC1" endpinid="Push-17-pinP0" pointList="-48,32,8,32,8,36,16,36" />
+
+<item itemtype="Connector" uid="Connector-37" startpinid="Push-16-switch0pinN" endpinid="Node-18-0" pointList="4,60,56,60" />
+
+<item itemtype="Connector" uid="Connector-38" startpinid="Node-18-2" endpinid="Ground-15-Gnd" pointList="56,60,56,96" />
+
+<item itemtype="Connector" uid="Connector-39" startpinid="mega8-4-PORTC2" endpinid="Push-19-pinP0" pointList="-48,24,-36,24" />
+
+<item itemtype="Connector" uid="Connector-40" startpinid="Push-19-switch0pinN" endpinid="Node-20-1" pointList="-4,24,56,24,56,36" />
+
+<item itemtype="Connector" uid="Connector-41" startpinid="Push-17-switch0pinN" endpinid="Node-20-0" pointList="48,36,56,36" />
+
+<item itemtype="Connector" uid="Connector-42" startpinid="Node-20-2" endpinid="Node-18-1" pointList="56,36,56,60" />
 
 </circuit>
